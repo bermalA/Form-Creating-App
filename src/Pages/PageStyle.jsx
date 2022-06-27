@@ -20,9 +20,14 @@ const useStyles = makeStyles((theme) => ({
         float: 'left',
     },
     right: {
-        background: 'blue',
+        background: 'ghostwhite',
         flex: 3,
-        float: 'right'
+        float: 'right',
+        maxHeight: '90vh',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
+        flexDirection: 'column'
     },
     top: {
         background: 'whitesmoke',
