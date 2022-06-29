@@ -103,11 +103,11 @@ const Page = () => {
               })}
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 {grid.map((data, i) => {
-                  return <BoardGrid/>
+                  return <BoardGrid />
               })}
               </div>
               {textf.map((data, i) => {
-                return <InputField className="active"/>
+                return <InputField />
               })}
               {btn.map((data, i) => {
                 return <ButtonDR />
@@ -128,6 +128,9 @@ const Page = () => {
           </div>
         </div>
       </Container>
+      <div className={classes.rightbar}>
+          
+      </div>
     </div>
   )
 }

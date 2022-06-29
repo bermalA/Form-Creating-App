@@ -2,7 +2,7 @@ import { TextField } from '@mui/material'
 import React from 'react'
 import { useDrag } from 'react-dnd'
 
-const InputField = () => {
+const InputField = (props) => {
     const [{isDragging}, drag] = useDrag(()=>({
         type: 'component',
         collect: (monitor) => ({
@@ -10,7 +10,7 @@ const InputField = () => {
         }),
     }))
   return (
-    <TextField ref={drag}/>
+    <TextField ref={drag} label={props.label} />
   )
 }
 

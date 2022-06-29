@@ -53,6 +53,13 @@ const useStyles = makeStyles((theme) => ({
     },
     gridItem: {
         background: 'ghostwhite'
+    },
+    rightbar:  {
+        background: 'ghostwhite',
+        height: '100vh',
+        flex: 1, 
+        marginTop: 60,
+        margin: 10
     }
 }));
 
