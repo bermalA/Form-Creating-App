@@ -1,9 +1,17 @@
 import { Ballot, CheckBox, Crop54, EditAttributes, FontDownload, HorizontalSplit, Input, RadioButtonChecked, Tab, TextFields, ViewColumn } from "@mui/icons-material"
-import { Button, Checkbox, Container, Grid, IconButton, MenuItem, Radio, Select, Switch, TextField, Typography } from "@mui/material"
-import { useState } from "react"
-import Leftbar from "../Components/LeftBar/Leftbar"
-import Navbar from "../Components/Navbar/Navbar"
+import { Container, IconButton, Typography } from "@mui/material"
+import BoardSec from "../../Components/Draggable/BoardSection"
+import ButtonDR from "../../Components/Draggable/Button"
+import CheckboxDR from "../../Components/Draggable/CheckboxDR"
+import InputField from "../../Components/Draggable/Input"
+import RadioDR from "../../Components/Draggable/RadioDR"
+import SelectDR from "../../Components/Draggable/SelectDR"
+import SwitchDR from "../../Components/Draggable/SwitchDR"
+import Leftbar from "../../Components/LeftBar/Leftbar"
+import Navbar from "../../Components/Navbar/Navbar"
 import useStyles from "./PageStyle"
+import { useState } from "react"
+import BoardGrid from "../../Components/Draggable/BoardGrid"
 
 
 const Page = () => {
@@ -91,32 +99,30 @@ const Page = () => {
           <div className={classes.right}>
             <form action="" style={{ marginTop: 20 }}>
               {section.map((data, i) => {
-                return <Container style={{ background: 'white', height: 50, width: '100vh', margin: 10 }}>somethşng</Container>
+                return <BoardSec />
               })}
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 {grid.map((data, i) => {
-                  return <Container style={{ background: 'white', flex: 1, flexDirection: 'row', flexWrap: 'Wrap' }}>grid</Container>
-                })}
+                  return <BoardGrid/>
+              })}
               </div>
               {textf.map((data, i) => {
-                return <TextField />
+                return <InputField className="active"/>
               })}
               {btn.map((data, i) => {
-                return <Button variant='contained'>Sth</Button>
+                return <ButtonDR />
               })}
               {slct.map((data, i) => {
-                return <Select>
-                  <MenuItem>1</MenuItem>
-                </Select>
+                return <SelectDR />
               })}
               {swch.map((data,i)=>{
-                return <Switch />
+                return <SwitchDR/>
               })}
               {chck.map((data, i) => {
-                return <Checkbox />
+                return <CheckboxDR />
               })}
               {rad.map((data,i)=>{
-                return <Radio />
+                return <RadioDR />
               })}
             </form>
           </div>

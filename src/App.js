@@ -1,12 +1,15 @@
-import Control from "./Pages/control/Control";
-import Control1 from "./Pages/control/sth";
-import Page from "./Pages/Page";
+import {HTML5Backend} from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import Page from "./Pages/Form/Page";
+
 
 function App() {
   return (
-    <div className="App">
-      <Page />
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div className="App">
+        <Page />
+      </div>
+    </DndProvider>
   );
 }
 
