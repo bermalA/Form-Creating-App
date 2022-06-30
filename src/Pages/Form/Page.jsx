@@ -12,7 +12,6 @@ import Navbar from "../../Components/Navbar/Navbar"
 import useStyles from "./PageStyle"
 import { useState } from "react"
 import BoardGrid from "../../Components/Draggable/BoardGrid"
-import { useFormik } from "formik"
 
 
 const Page = () => {
@@ -30,19 +29,34 @@ const Page = () => {
     setVisible(!visible);
   }
 
-  const AddLabel = () =>{
-    
+  const [labeler, setLabeler] = useState("");
 
+  const AddLabel = () =>{
+    const [textInput, setTextInput] = useState("");
+    const handleTextInput = (event) => {
+      setTextInput(event.target.value);
+    }
+    const handleTextSubmit = (event) => {
+      console.log(textInput);
+      setLabeler(textInput);
+      event.preventDefault();
+      shwVisible();
+    }
     return <div 
       style={{display:'flex', flexDirection: 'column'}}>
+        <form onSubmit={handleTextSubmit}>
       <TextField 
       label='Name' 
       variant="standard"
+      value={textInput}
+      onChange={handleTextInput}
       />
       <Button 
+      type="submit"
       style={{margin: 20, marginLeft: 150}}>
         SAVE
       </Button>
+        </form>
     </div>
   }
 
@@ -128,7 +142,7 @@ const Page = () => {
               })}
               </div>
               {textf.map((data, i) => {
-                return <InputField onClick={()=>{shwVisible()}}/>
+                return <InputField onClick={()=>{shwVisible()}} label={labeler}/>
               })}
               {btn.map((data, i) => {
                 return <ButtonDR />
