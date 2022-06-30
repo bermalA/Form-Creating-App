@@ -1,5 +1,5 @@
 import { Ballot, CheckBox, Crop54, EditAttributes, FontDownload, HorizontalSplit, Input, RadioButtonChecked, Tab, TextFields, ViewColumn } from "@mui/icons-material"
-import { Button, Container, IconButton, TextField, Typography } from "@mui/material"
+import { Button, Container, IconButton, TextField, Typography, unstable_useId } from "@mui/material"
 import BoardSec from "../../Components/Draggable/BoardSection"
 import ButtonDR from "../../Components/Draggable/Button"
 import CheckboxDR from "../../Components/Draggable/CheckboxDR"
@@ -15,7 +15,8 @@ import BoardGrid from "../../Components/Draggable/BoardGrid"
 
 
 const Page = () => {
-  const classes = useStyles()
+  const classes = useStyles();
+  const Objects = [];
   const [section, setSection] = useState([]);
   const [grid, setGrid] = useState([]);
   const [textf, setTextf] = useState([]);
@@ -28,16 +29,15 @@ const Page = () => {
   const shwVisible = () => {
     setVisible(!visible);
   }
-
   const [labeler, setLabeler] = useState("");
-
+  const ID = [1,2,3,4,5,6,7,8,9];
   const AddLabel = () =>{
     const [textInput, setTextInput] = useState("");
     const handleTextInput = (event) => {
       setTextInput(event.target.value);
     }
     const handleTextSubmit = (event) => {
-      console.log(textInput);
+      console.log(Objects);
       setLabeler(textInput);
       event.preventDefault();
       shwVisible();
@@ -145,7 +145,10 @@ const Page = () => {
                 return <InputField onClick={()=>{shwVisible()}} label={labeler}/>
               })}
               {btn.map((data, i) => {
-                return <ButtonDR />
+                const obj = {id: {ID}, comp: <ButtonDR />}
+                Objects.push(obj)
+                console.log(Objects)
+                return obj.comp
               })}
               {slct.map((data, i) => {
                 return <SelectDR />

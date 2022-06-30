@@ -1,6 +1,6 @@
 import { KeyboardArrowUp, PersonOutlined } from '@mui/icons-material'
 import { Chip } from '@mui/material'
-import users from '../data/user'
+import users from '../../data/user'
 import useStyles from './WidgetStyle'
 
 

@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { Formik, useFormik } from "formik";
 import useStyles from "./LoginStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import addUser from "../../Components/data/user";
+import addUser from "../../data/user";
 
 const Login = () => {
   const login = useStyles();

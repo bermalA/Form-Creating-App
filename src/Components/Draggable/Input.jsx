@@ -5,6 +5,7 @@ import { useDrag } from 'react-dnd'
 const InputField = (props) => {
     const [{isDragging}, drag] = useDrag(()=>({
         type: 'component',
+        item: 'Item',
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging(),
         }),
