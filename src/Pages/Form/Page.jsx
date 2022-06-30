@@ -1,5 +1,5 @@
 import { Ballot, CheckBox, Crop54, EditAttributes, FontDownload, HorizontalSplit, Input, RadioButtonChecked, Tab, TextFields, ViewColumn } from "@mui/icons-material"
-import { Container, IconButton, Typography } from "@mui/material"
+import { Button, Container, IconButton, TextField, Typography } from "@mui/material"
 import BoardSec from "../../Components/Draggable/BoardSection"
 import ButtonDR from "../../Components/Draggable/Button"
 import CheckboxDR from "../../Components/Draggable/CheckboxDR"
@@ -12,6 +12,7 @@ import Navbar from "../../Components/Navbar/Navbar"
 import useStyles from "./PageStyle"
 import { useState } from "react"
 import BoardGrid from "../../Components/Draggable/BoardGrid"
+import { useFormik } from "formik"
 
 
 const Page = () => {
@@ -24,6 +25,26 @@ const Page = () => {
   const [swch, setSwch] = useState([]);
   const [chck, setChck] = useState([]);
   const [rad, setRad] = useState([]);
+  const [visible, setVisible] = useState(false);
+  const shwVisible = () => {
+    setVisible(!visible);
+  }
+
+  const AddLabel = () =>{
+    
+
+    return <div 
+      style={{display:'flex', flexDirection: 'column'}}>
+      <TextField 
+      label='Name' 
+      variant="standard"
+      />
+      <Button 
+      style={{margin: 20, marginLeft: 150}}>
+        SAVE
+      </Button>
+    </div>
+  }
 
   return (
     <div className={classes.home}>
@@ -107,7 +128,7 @@ const Page = () => {
               })}
               </div>
               {textf.map((data, i) => {
-                return <InputField />
+                return <InputField onClick={()=>{shwVisible()}}/>
               })}
               {btn.map((data, i) => {
                 return <ButtonDR />
@@ -129,7 +150,9 @@ const Page = () => {
         </div>
       </Container>
       <div className={classes.rightbar}>
-          
+          <div className="attributes" style={{margin: 30}}>
+              {visible ? <AddLabel /> : "Please choose an item to edit"}
+          </div>
       </div>
     </div>
   )

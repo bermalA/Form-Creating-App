@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         background: 'ghostwhite',
         flex: 3,
         float: 'right',
-        maxHeight: '90vh',
+        height: '100vh',
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         flex: 1, 
         marginTop: 60,
         margin: 10
-    }
+    },
 }));
 
 export default useStyles;

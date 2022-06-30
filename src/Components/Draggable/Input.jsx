@@ -10,7 +10,7 @@ const InputField = (props) => {
         }),
     }))
   return (
-    <TextField ref={drag} label={props.label} />
+    <TextField ref={drag} label={props.label} onClick={props.onClick} />
   )
 }
 

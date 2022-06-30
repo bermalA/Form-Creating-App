@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import { Formik, useFormik } from "formik";
 import useStyles from "./LoginStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import addUser from "../../Components/data/user";
 
 const Login = () => {
   const login = useStyles();
@@ -37,11 +38,12 @@ const Login = () => {
     },
     onSubmit: (values) => {
       console.log(values);
+      addUser(values);
     },
   });
   return (
     <div className={login.body}>
-      <form action="">
+      <form onSubmit={formik.handleSubmit}>
         <Card className={login.card} elevation={24}>
           <Typography className={login.typo} variant="h3">
             inviso
