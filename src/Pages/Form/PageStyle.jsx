@@ -55,12 +55,18 @@ const useStyles = makeStyles((theme) => ({
         background: 'ghostwhite'
     },
     rightbar:  {
-        background: 'ghostwhite',
         height: '100vh',
         flex: 1, 
         marginTop: 60,
         margin: 10
     },
+    attributes: {
+        height : '75vh',
+        flex: 1,
+        background:'ghostwhite',
+        marginTop: 20,
+        padding: 30
+    }
 }));
 
 export default useStyles;

@@ -7,11 +7,11 @@ const useStyles = makeStyles({
         padding: 0
     },
     container: {
-        flex: 3
+        flex: 3,
+        background: 'ghostwhite',
     },
     page: {
-        background: 'ghostwhite',
-        height: '100vh',
+        height: '23vh',
         display: 'flex',
         flexDirection: 'row'
     }

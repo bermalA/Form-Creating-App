@@ -16,6 +16,12 @@ const Home = () => {
                 <Widget />
                 <Widget />
             </div>
+            <div className={home.page}>
+            <Widget />
+            </div>
+            <div className={home.page}>
+              <Widget />
+            </div>
         </div>
     </div>
   )

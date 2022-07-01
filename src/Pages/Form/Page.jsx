@@ -1,5 +1,5 @@
 import { Ballot, CheckBox, Crop54, EditAttributes, FontDownload, HorizontalSplit, Input, RadioButtonChecked, Tab, TextFields, ViewColumn } from "@mui/icons-material"
-import { Button, Container, IconButton, TextField, Typography, unstable_useId } from "@mui/material"
+import { Button, Container, IconButton, MenuItem, Select, TextField, Typography, unstable_useId } from "@mui/material"
 import BoardSec from "../../Components/Draggable/BoardSection"
 import ButtonDR from "../../Components/Draggable/Button"
 import CheckboxDR from "../../Components/Draggable/CheckboxDR"
@@ -31,6 +31,7 @@ const Page = () => {
   }
   const [labeler, setLabeler] = useState("");
   const ID = [1,2,3,4,5,6,7,8,9];
+  const [defaultCheck, setDefaultCheck] =useState("spes");
   const AddLabel = () =>{
     const [textInput, setTextInput] = useState("");
     const handleTextInput = (event) => {
@@ -167,7 +168,19 @@ const Page = () => {
         </div>
       </Container>
       <div className={classes.rightbar}>
-          <div className="attributes" style={{margin: 30}}>
+          <div className="saving" style={{background: 'ghostwhite'}}>
+              <div className="table" style={{backgrpund: 'white', display:'flex', flexDirection:'column', marginLeft: 10, paddingTop: 30}}>
+                <Select value={defaultCheck} style={{width: 200}}>
+                  <MenuItem value="spes" disabled>Spesifications</MenuItem>
+                  <MenuItem value="send" onClick={()=> setDefaultCheck("send")}>Send</MenuItem>
+                </Select>
+                <div className="buttons" style={{display:'flex', flexDirection: 'row', marginTop: 10, marginLeft: 50}}>
+                <Button>SAVE REPORT</Button>
+                <Button>RESET</Button>
+                </div>
+              </div>
+          </div>
+          <div className={classes.attributes}>
               {visible ? <AddLabel /> : "Please choose an item to edit"}
           </div>
       </div>
